@@ -23,7 +23,7 @@ MyArr2.push(8)
 // console.log(NewArr);
 
 // slice , splice 
-MyArr2.shift()
+//MyArr2.shift()
 
 console.log("Slice and Splice concept");
 
@@ -36,3 +36,4 @@ console.log(MyArr2.splice(0,3));
 console.log("Result after splice", MyArr2);
 
 // splice madhe changes in actual array, manuplites the array  
+
