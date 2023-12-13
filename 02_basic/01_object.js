@@ -1,5 +1,7 @@
 const MySym = Symbol("Key1")
 
+//Object literals 
+
 const JsUSer = {
     name : "Harsh",
     "Last LoggIn" : ["today","Monday"],
