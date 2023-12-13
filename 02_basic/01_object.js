@@ -34,8 +34,19 @@ Object.freeze(JsUSer) // lock the object
 JsUSer.age = 22
 // it doesnt make any changes in object 
 
-JsUSer.greeting = function(){
-    console.log(`hello Js User, ${this.name}`);
+// JsUSer.greeting = function(){
+//     console.log(`hello Js User, ${this.name}`);
+// }
+
+//console.log(JsUSer.greeting());
+
+const NewObject = {
+    name1 : "Harshwardhan",
+    "Last Name" : "Shinde",
+    Full_Name : function(){
+        console.log(`Hello Users my full name is ${this.name1}  ${this["Last Name"]}`);
+    }
 }
 
-console.log(JsUSer.greeting());
+console.log(NewObject);
+console.log(NewObject.Full_Name());
