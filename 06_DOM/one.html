@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <title>Document</title>
+</head>
+<body>
+    <div>
+
+        <h1 id="FirstH1"  class="harsh">Learning DOM, in JavaScript <span style="display: none;"> test text </span> </h1>
+
+        <p>Lorem ipsum dolor sit amet. </p>
+
+        <h2>Lorem ipsum dolor sit amet consectetur.</h2>
+        <h2>Lorem ipsum dolor sit amet consectetur.</h2>
+        <h2>Lorem ipsum dolor sit amet consectetur.</h2>
+        <h2>Lorem ipsum dolor sit amet consectetur.</h2>
+
+        <input type="password" name="pass" id="PassSet">
+
+        <ul id="UlList">
+            <li>One</li>
+            <li>Two</li>
+            <li>Three</li>
+        </ul>
+
+        <ul>
+            <li class="list-item">Thar</li>
+            <li class="list-item">Crysta</li>
+            <li class="list-item">Jetta</li>
+            <li class="list-item">Civic</li>
+        </ul>
+
+    </div>
+
+    <div id="NewCon">
+  
+        <h2>Shivaji Maharaj</h2>
+        <h2>Sambhaji Maharaj</h2>
+        <h2>Shahu Maharaj</h2>
+        <h2>Maharana Pratap</h2>
+        <h2>Baji peshva</h2>
+
+    </div>
+</body>
+</html>
+
+
+
+
+
+    <!-- document.getElementById('FirstH1') = Get content in by ID
+    document.getElementById('FirstH1').className = harsh 
+    document.getElementById('FirstH1').getAttribute('class') = harsh
+    document.getElementById('FirstH1').setAttribute('class', 'con1') = it will overwrite "harsh" with "con1"
+
+    const IdOfh1 = document.getElementById('FirstH1')
+    IdOfh1.style.backgroundColor = 'green'  We can assign all style properties to var
+    IdOfh1.textContent = 'Learning DOM, in JavaScript  test text  '
+    IdOfh1.innerText  = 'Learning DOM, in JavaScript' 
+    IdOfh1.innerHTML  = 'Learning DOM, in JavaScript <span style="display: none;"> test text </span> '
+    
+    document.querySelector('h2') = <h2>Lorem ipsum dolor sit amet consectetur.</h2> , gives 1st occurence 
+    document.querySelector('#PassSet') =  <input type="password" name="pass" id="PassSet"> 
+    document.querySelector('Input[type="password"]') = <input type=​"password" name=​"pass" id=​"PassSet">​ 
+
+    document.querySelector('ul') 
+    const UnList = document.querySelector('ul')
+    UnList.querySelector('li').style.backgroundColor = 'red' or 
+    const LiSet = UnList.querySelector('li')
+    LiSet.style.backgroundColor = 'red'
+    LiSet.innerText = 'Five' , overwrite 'Five' instead of 'one'
+
+    let UlElements = document.getElementById('UlList')
+    let finalList = List.querySelectorAll('li'), select all elements from ul, 
+    finalList[1].style.backgroundColor = 'yellow',   it will change only 2nd li element
+
+
+    SUPPORTS FOREACH loop
+
+    let LiElements = document.querySelectorAll('li')
+    LiElements.forEach( function (l) {
+    l.style.color = 'red' 
+    } )
+
+
+    document.getElementsByClassName('list-item') , here we get HTMLcollection we cant access it using ForEach loop, So we have to convert it into Array for that use :-
+    let Collection = document.getElementsByClassName('list-item')
+    let ConvertedArray = Array.from(Collection)
+
+    ConvertedArray.forEach( function (item) {
+    console.log(item)
+    }) -->
+    
