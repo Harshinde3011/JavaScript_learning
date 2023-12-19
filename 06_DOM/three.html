@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    let div = document.createElement('div')
+    console.log(div);
+
+    div.className = "main"
+    div.id = "ConOne"
+    div.setAttribute("name", "login_bar")
+    div.style.color = 'green'
+    div.style.padding = '15px'
+    div.innerText = "Creating DOM element" 
+    //OR
+    // let addText = document.createTextNode("Creating DOM element")
+    // div.appendChild(addText)
+
+    // upto this all these thing are store on memory not on actual screen
+
+    
+    document.body.appendChild(div)
+    // This will print on actual window
+
+
+</script>
+</html>
