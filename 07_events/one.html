@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: darkgray;">
+
+    <h2>My Images</h2>
+
+    <ul id="images">
+        <li><img src="IMG_7266.JPG" alt="" width="200px" id="img1" height="200px"></li>
+        <li><img src="IMG_7288.JPG" alt="" width="200px" id="img2" height="200px"></li>
+        <li><img src="IMG_7302.JPG" alt="" width="200px" id="img3" height="200px"></li>
+        <li><img src="IMG_7404.JPG" alt="" width="200px" id="img4" height="200px"></li>
+        <li><a href="http://chat.openai.com/" id="GPT">ChatGPT</a></li>
+    </ul>
+</body>
+<script>
+
+    document.getElementById('img2').onclick = function () {
+       alert('clicked on image 2')
+    }
+
+
+    document.getElementById('img3').addEventListener('click', function (){
+        alert('clicked on image3')
+    }, false)
+
+    // another approach using attachevent 
+     
+    // event Object 
+
+    document.getElementById('img1').addEventListener('click', function(e){
+        console.log(e);
+    })
+   
+    // Event Propogation: it has two context 1st event bubbling and event capturing, by default event bubbling occur. (use on use cases) 
+
+    
+    document.querySelector('#images').addEventListener('click', function(e){
+        console.log("clicked inside ul");
+    },false)
+ 
+    
+    document.getElementById('img4').addEventListener('click', function (e){
+        console.log("clisked on img4");
+      e.stopPropagation()
+    }, false)
+
+    // when u click on image 4 it gives 1st"clicked on img4" then 2nd"clicked inside ul" vice versa in case of "true" i,e event capturing 
+    // bubbling = innerelement(image)->li->ul
+    //capturing = ul->li->image
+    // stopPropogation :- clicked on img4 
+
+    // preventDefault it stop the default action of the ur c=instruction
+
+    document.getElementById('GPT').addEventListener('click', function(e){
+         e.preventDefault(); //NOW it will not direct to chatGpt web site
+         console.log("clicked on GPT");
+    })
+
+    
+
+    
+</script>
+</html>
+
+
+ <!-- 
+ 1.all the events in JS are runs sequentially
+
+ 2.So the events in an action that occur as per the users instruction as input and output as response  
+
+3.we simply add event in html tag also like 
+  <li><img src="IMG_7288.JPG" alt="" width="350px" id="img2" height="250px"  onclick="alert('clicked on img2')"></li> but its not good practice in JS
+
+4.document.getElementById('img2').onclick = function () {
+        alert('clicked on image 2')
+    }
+this one is also correct but give less features like propogation 
+
+5. addEventListner have no of events like "click","mouseEvent" etc
+
+6. the false in addEventListner is default value 
+
+7. Event is parent of all event objects,obj = mouseevent, touchevent, dragenevt
+line no 32: gives no of events(broweser, windows): pointerevnet,srcElement, target, view, 
+
+Imp Events:
+1. type: The type event property returns the type of the triggered event.
+
+2. timestamp: The timeStamp read-only property of the Event interface returns the time (in milliseconds) at which the event was created.
+
+3. defaultPrevented: JavaScript allows you to determine whether or not the default behavior of an event has been prevented by your code
+if true - default action associated with that event has been stopped or prevented from occurring
+if false - vice versa
+
+4. "target event" typically refers to the specific element or object on which an event is directly triggered or occurred
+user clicks a button on a webpage, the "click" event occurs, and the button clicked becomes the target of that event
+
+5.toElement property was used in the past to refer to the element to which the mouse pointer was headed while triggering a mouse-related event, now relatedTarget is used 
+
+
+-->
