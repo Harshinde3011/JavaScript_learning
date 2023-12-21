@@ -1,0 +1,55 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: darkgray;">
+
+    <h2>My Images</h2>
+
+    <ul id="images">
+        <li><img src="IMG_7266.JPG" alt="" width="200px" id="img1" height="200px"></li>
+        <li><img src="IMG_7288.JPG" alt="" width="200px" id="img2" height="200px"></li>
+        <li><img src="IMG_7302.JPG" alt="" width="200px" id="img3" height="200px"></li>
+        <li><img src="IMG_7404.JPG" alt="" width="200px" id="img4" height="200px"></li>
+        <li><a href="http://chat.openai.com/" id="GPT">ChatGPT</a></li>
+    </ul>
+</body>
+
+<script>
+
+    document.querySelector('#images').addEventListener('click', function(e){
+//        console.log(e.target);
+    })
+    //OP= <img src="IMG_7288.JPG" alt width="200px" id="img2" height="200px">
+
+    document.querySelector('#images').addEventListener('click', function(e){
+//        console.log(e.target.parentNode);
+    })
+// OP it gives it parent node i,e li 
+
+
+// here we want to remove image on click 
+
+    document.getElementById('images').addEventListener('click', function(e){
+        let removeIt = e.target.parentNode
+//       removeIt.remove()  
+// it work well upto when we click on image but if we click on li or reside the img(i,e on li not on img) then everything will delete, cause the parent of li is "ul" so it remove all li     
+    })
+    //    console.log(removeIt.parentNode);  OP = parent node ul 
+    
+
+    // following code works well 
+
+    document.getElementById('images').addEventListener('click', function(e){
+        console.log(e.target.tagName); // OP = IMG for image,A for anchor
+        let removeIt = e.target.parentNode
+        
+        if(e.target.tagName === 'IMG'){
+            removeIt.remove()
+        }
+    })
+</script>
+
+</html>
